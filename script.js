@@ -43,18 +43,44 @@ let generateCard = (data) => {
     const speed = data.stats[5].base_stat;
 
     const themeColor = typeColor[data.types[0].type.name];
-    console.log(themeColor);
-    card.innerHTML = '<p class="hp"><span>HP</span>${hp}</p><img alt="${Pokename}" src="${imgSrc}" /><h2 class="poke-name">${pokename}</h2><div class="types"></div><div class="stats"><div><h3>${attack}</h3><p>Attack</p></div><div><h3>${defence}</h3><p>Defence</p></div><div><h3>${speed}</h3><p>Speed</p></div></div>';
+    card.innerHTML = `
+          <p class="hp">
+            <span>HP</span>
+              ${hp}
+          </p>
+          <img src=${imgSrc} />
+          <h2 class="poke-name">${pokename}</h2>
+          <div class="types">
+           
+          </div>
+          <div class="stats">
+            <div>
+              <h3>${attack}</h3>
+              <p>Attack</p>
+            </div>
+            <div>
+              <h3>${defence}</h3>
+              <p>Defense</p>
+            </div>
+            <div>
+              <h3>${speed}</h3>
+              <p>Speed</p>
+            </div>
+          </div>
+    `;
     appendTypes(data.types);
+    
     
 };
 
 let appendTypes = (types) => {
-    types.forEach((item) => {
+    types.forEach((items)=>{
         let span = document.createElement("SPAN");
         span.textContent = item.type.name;
         document.querySelector(".types").appendChild(span);
+
     });
 }
+
 
 btn.addEventListener("click", getPokeData);
