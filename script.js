@@ -1,7 +1,7 @@
 const typeColor = {
     bug: "#26de81",
     dragon: "#ffeaa7",
-    electric: "#fed330",
+    electric: "#7DF9FF",
     fairy: "#FF0069",
     fighting: "#30336b",
     fire: "#f0932b",
@@ -33,16 +33,16 @@ let getPokeData = () => {
 };
 
 let generateCard = (data) => {
-    console.log(data);
+    //console.log(data);
     const hp = data.stats[0].base_stat;
     const imgSrc = data.sprites.other["official-artwork"].front_default;
     const pokename = data.name[0].toUpperCase() + data.name.slice(1);
-    const moves = data.moves[0].move.name;
+    const id = data.moves[0].move.name;
+    const moves = id.toUpperCase();
     const attack = data.stats[1].base_stat;
     const defence = data.stats[2].base_stat;
     const speed = data.stats[5].base_stat;
-    console.log(imgSrc);
-
+   
     const themeColor = typeColor[data.types[0].type.name];
     card.innerHTML = `
           <p class="hp">
@@ -51,9 +51,12 @@ let generateCard = (data) => {
           </p>
           <img src=${imgSrc} />
           <h2 class="poke-name">${pokename}</h2>
+          <div class = "moves">
+          <p>Special Move</p>
+          <h4>${moves}</h4>
+          </div>
           <div class="types">
-           <h3>${moves}</h3>
-           <p>Special Move</p>
+           
           </div>
           <div class="stats">
             <div>
@@ -79,7 +82,8 @@ let generateCard = (data) => {
 let appendTypes = (types) => {
     types.forEach((items)=>{
         let span = document.createElement("SPAN");
-        span.textContent = item.type.name;
+        span.textContent = items.type.name;
+        console.log(span.textContent);
         document.querySelector(".types").appendChild(span);
 
     });
