@@ -35,12 +35,13 @@ let getPokeData = () => {
 let generateCard = (data) => {
     console.log(data);
     const hp = data.stats[0].base_stat;
-    const imgSrc = data.sprites.other.dream_world.front_default;
+    const imgSrc = data.sprites.other["official-artwork"].front_default;
     const pokename = data.name[0].toUpperCase() + data.name.slice(1);
-    const moves = data.moves.length;
+    const moves = data.moves[0].move.name;
     const attack = data.stats[1].base_stat;
     const defence = data.stats[2].base_stat;
     const speed = data.stats[5].base_stat;
+    console.log(imgSrc);
 
     const themeColor = typeColor[data.types[0].type.name];
     card.innerHTML = `
@@ -51,7 +52,8 @@ let generateCard = (data) => {
           <img src=${imgSrc} />
           <h2 class="poke-name">${pokename}</h2>
           <div class="types">
-           
+           <h3>${moves}</h3>
+           <p>Special Move</p>
           </div>
           <div class="stats">
             <div>
@@ -69,6 +71,7 @@ let generateCard = (data) => {
           </div>
     `;
     appendTypes(data.types);
+    styleCard(themeColor);
     
     
 };
@@ -82,5 +85,14 @@ let appendTypes = (types) => {
     });
 }
 
+let styleCard = (color) => {
+    card.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
+    card.querySelector(".types span").forEach((typeColor) => {
+        typeColor.style.background = color;
+    });
+    
+};
+
 
 btn.addEventListener("click", getPokeData);
+window.addEventListener("load",getPokeData);
