@@ -55,7 +55,7 @@ let generateCard = (data) => {
           <p>Special Move</p>
           <h4>${moves}</h4>
           </div>
-          <div class="types">
+          <div id = "element" class="types">
            
           </div>
           <div class="stats">
@@ -91,8 +91,8 @@ let appendTypes = (types) => {
 
 let styleCard = (color) => {
     card.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
-    card.querySelector(".types span").forEach((typeColor) => {
-        typeColor.style.background = color;
+    card.querySelectorAll(".types span").forEach((typeColor) => {
+        typeColor.style.backgroundColor = color;
     });
     
 };

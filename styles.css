@@ -80,6 +80,8 @@ body {
     padding: 5px 20px;
     border-radius: 20px;
     color: black;
+    background-color: beige;
+    border-radius: 40px;
 }
 
 .stats {
