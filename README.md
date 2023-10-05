@@ -38,4 +38,10 @@ Javascript, HTML, CSS, NodeJS, ExpressJS
 
 
 
+https://github.com/Roughbot/Pokemon-Project/assets/96811104/19e17ea5-673a-44f1-9fe0-9818b49b1c84
+
+
+
 ## Certificate
+
+![certificate_Express JS Dice Project_250862_page-0001](https://github.com/Roughbot/Pokemon-Project/assets/96811104/d1e659c8-7374-4de4-9d38-2b754ffb0447)
