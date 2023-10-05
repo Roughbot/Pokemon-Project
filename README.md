@@ -1,7 +1,7 @@
 
 # ExpressJS - Pokemon project 
 
-The proects aim is to create a webpage that shows different Pokemon characters and their specs using a public API.
+In this proect i create a webpage that shows different Pokemon characters and their specs using a public API.
 
 
 
