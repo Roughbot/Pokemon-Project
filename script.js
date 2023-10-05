@@ -83,7 +83,6 @@ let appendTypes = (types) => {
     types.forEach((items)=>{
         let span = document.createElement("SPAN");
         span.textContent = items.type.name;
-        console.log(span.textContent);
         document.querySelector(".types").appendChild(span);
 
     });
