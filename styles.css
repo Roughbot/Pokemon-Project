@@ -44,7 +44,7 @@ body {
 #card img {
     display: block;
     width: auto;
-    max-height: 300px;
+    max-height: 250px;
     position: relative;
     margin: 10px auto;
 }
